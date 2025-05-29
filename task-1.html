@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .navbar{            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            transition: background-color 0.3s;
+            z-index: 999;
+        }
+        .navbar.scrolled{
+            background-color: red;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover{
+            columns: #ff6347;
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .section{
+            height: 100vh;
+            padding: 50px;
+            background-color: antiquewhite;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#services">services</a>
+        <a href="#contact">contact</a>
+    </div>
+    <div class="hero" id="home">
+        <h1>welcome to my page</h1>
+        <p>scroll down to explore</p>
+    </div>
+    <div class="section" id="about">
+       <h2>about us</h2>
+        <p>this is about the page</p>
+    </div>
+    <div class="section" id="services">
+        <h2>our serveices</h2>
+        <p>how can we help you</p>
+    </div>
+    <div class="section" id="contact">
+        <h2>contact us</h2>
+        <p>get in touch</p>
+    </div>
+    <script>
+        window.addEventListener('scroll', function() {
+          const navbar = document.getElementById('navbar');
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+      </script>
+</body>
+</html>
